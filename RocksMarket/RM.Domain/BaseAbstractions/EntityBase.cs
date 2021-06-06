@@ -6,7 +6,7 @@ namespace RM.Domain.BaseAbstractions
     {
         public EntityBase()
         {
-            
+            Id = Guid.NewGuid();
         }
         
         public EntityBase(Guid id)

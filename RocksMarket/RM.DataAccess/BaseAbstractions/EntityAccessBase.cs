@@ -14,8 +14,8 @@ namespace RM.DataAccess.BaseAbstractions
             _context = context;
         }
 
-        public void Append(T entity)
-            => _context.AddAsync(entity);
+        public async Task Append(T entity)
+            => await _context.AddAsync(entity);
 
         public void Remove(T entity)
             => _context.Remove(entity);

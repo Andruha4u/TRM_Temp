@@ -1,5 +1,4 @@
 using System;
-using System.Drawing;
 using RM.Domain.BaseAbstractions;
 
 namespace RM.Domain.Retail

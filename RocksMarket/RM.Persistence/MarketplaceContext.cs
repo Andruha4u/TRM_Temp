@@ -6,11 +6,18 @@ namespace RM.Persistence
 {
     public class MarketplaceContext : DbContext
     {
-        public DbSet<UserPaymentInformation> UserPaymentInformationCollection { get; set; }
+
+        public MarketplaceContext(DbContextOptions<MarketplaceContext> options) : base(options)
+        {
+        }
+        
+        public DbSet<UserPaymentInformation> UserPaymentInformation { get; set; }
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new UserPaymentInformationConfiguration());
+            modelBuilder.HasPostgresExtension("uuid-ossp");
+
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(UserPaymentInformationConfiguration).Assembly);
         }
     }
 }

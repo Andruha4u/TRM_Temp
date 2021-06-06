@@ -10,7 +10,10 @@ namespace RM.Persistence.Configuration
         {
             builder.HasKey(entity => entity.Id);
     
-            // TODO: All other properties
+            builder.Property(x => x.Id)
+                .HasColumnType("uuid")
+                .HasDefaultValueSql("uuid_generate_v4()")
+                .IsRequired();        
         }
     }
 }

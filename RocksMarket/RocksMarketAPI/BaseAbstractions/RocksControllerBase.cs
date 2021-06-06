@@ -10,6 +10,6 @@ namespace RocksMarketAPI.BaseAbstractions
             Mediator = mediator;
         }
 
-        protected IMediator Mediator;
+        protected readonly IMediator Mediator;
     }
 }
