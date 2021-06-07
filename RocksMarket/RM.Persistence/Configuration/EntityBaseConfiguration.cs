@@ -11,8 +11,8 @@ namespace RM.Persistence.Configuration
             builder.HasKey(entity => entity.Id);
     
             builder.Property(x => x.Id)
-                .HasColumnType("uuid")
-                .HasDefaultValueSql("uuid_generate_v4()")
+                .HasColumnType(PersistenceResources.Guid_Type)
+                .HasDefaultValueSql(PersistenceResources.Default_Id_Value)
                 .IsRequired();        
         }
     }
