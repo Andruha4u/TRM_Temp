@@ -13,7 +13,7 @@ namespace RocksMarketAPI.Controllers
     [Route("[controller]")]
     public class UserPaymentInformationController : RocksControllerBase
     {
-        public UserPaymentInformationController(IMediator mediator, MarketplaceContext ctx)
+        public UserPaymentInformationController(IMediator mediator)
             : base(mediator)
         {
         }

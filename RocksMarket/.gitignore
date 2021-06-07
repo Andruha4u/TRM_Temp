@@ -133,5 +133,7 @@ $RECYCLE.BIN/
 _NCrunch*
 
 # Rider
-.idea/*
-.idea/
+*/.idea/*
+RocksMarket/.idea/*
+RocksMarket/.idea/
+.idea
