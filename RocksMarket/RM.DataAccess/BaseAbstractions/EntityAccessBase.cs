@@ -5,7 +5,7 @@ using RM.Persistence;
 
 namespace RM.DataAccess.BaseAbstractions
 {
-    public class EntityAccessBase<T> where T: EntityBase
+    public class EntityAccessBase<T> : IEntityAccess<T> where T: EntityBase
     {
         private readonly MarketplaceContext _context;
         
@@ -14,8 +14,8 @@ namespace RM.DataAccess.BaseAbstractions
             _context = context;
         }
 
-        public void Append(T entity)
-            => _context.AddAsync(entity);
+        public async Task Append(T entity)
+            => await _context.AddAsync(entity);
 
         public void Remove(T entity)
             => _context.Remove(entity);
