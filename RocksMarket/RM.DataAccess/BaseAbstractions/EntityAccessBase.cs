@@ -5,7 +5,7 @@ using RM.Persistence;
 
 namespace RM.DataAccess.BaseAbstractions
 {
-    public class EntityAccessBase<T> where T: EntityBase
+    public class EntityAccessBase<T> : IEntityAccess<T> where T: EntityBase
     {
         private readonly MarketplaceContext _context;
         
